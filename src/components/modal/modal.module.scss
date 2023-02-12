@@ -1,0 +1,63 @@
+.modalContent {
+  position: relative;
+  border-radius: 40px;
+  width: fit-content;
+  overflow: hidden;
+
+  &:hover .closeModal {
+    opacity: .3;
+  }
+}
+
+.innerContent {
+  //padding: 0 40px 60px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "GilroyBold", sans-serif;
+  font-size: 18px;
+}
+
+.closeModal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+  opacity: 0;
+}
+
+.closeModal::before,
+.closeModal::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+
+  &.withTitle {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+  }
+}
+
+.closeModal::before {
+  transform: rotate(45deg);
+}
+
+.closeModal::after {
+  transform: rotate(-45deg);
+}
+
+.title {
+  margin-top: 8px;
+}

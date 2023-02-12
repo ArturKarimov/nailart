@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  font-family: "GilroyBold", sans-serif;
+  width: 20%;
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.link {
+  padding: 15px 0;
+  cursor: pointer;
+
+  &:hover a {
+    color: #8585AD;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.activeLink {
+  color: #8585AD !important;
+}

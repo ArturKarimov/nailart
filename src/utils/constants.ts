@@ -1,0 +1,1 @@
+export const BASE_URL = "https://api.yclients.com/api/v1"

@@ -1,0 +1,29 @@
+.citate {
+  text-align: right;
+  margin: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+
+  & p {
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: #8585AD;
+      border-color: #8585AD;
+    }
+  }
+}
+
+.activeButton {
+  color: #8585AD;
+  border-color: #8585AD !important;
+}

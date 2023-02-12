@@ -1,0 +1,30 @@
+.wrapper {
+  background: rgba(255, 253, 253, 0.5);
+  width: 50%;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+
+  & p {
+    color: #000;
+    margin: 0;
+  }
+}
+
+.header {
+  font-family: "GilroyBold", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+
+  & p:first-child {
+    font-family: "GilroyBold", sans-serif;
+  }
+}
