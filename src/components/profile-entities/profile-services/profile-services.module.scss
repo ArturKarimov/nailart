@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin-top: 31px;
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.notStaffs {
+  text-align: center;
+}
+
+.addIcon {
+  font-size: 32px;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.deleteIcon {
+  font-size: 32px;
+  margin-right: 20px;
+  padding: 5px;
+  color: #a00000;
+  transform: rotate(45deg);
+}

@@ -5,8 +5,8 @@ import {Modal} from '../modal';
 import BaseInput from "../../base-input/base-input";
 import {useForm} from "../../../hooks/useForm";
 import BaseButton from "../../base-button/base-button";
-import {profileApi} from "../../../services/profile/profile";
-import {IStaffRequest} from "../../../services/profile/interface";
+import {profileStaffApi} from "../../../services/profile/profile-staff/profile-staff";
+import {IStaffRequest} from "../../../services/profile/profile-staff/interface";
 import {nanoid} from "@reduxjs/toolkit";
 import {recordFormApi} from "../../../services/record-form/record-form";
 import Loading from "../../loading/loading";
@@ -18,10 +18,10 @@ interface INewStaff {
 }
 
 const ProfileAddStaffModal = () => {
-    const [addStaff, {data: addStaffData}] = profileApi.useAddStaffMutation();
-    const [updateStaff, {data: updateStaffData}] = profileApi.useUpdateStaffMutation();
+    const [addStaff, {data: addStaffData}] = profileStaffApi.useAddStaffMutation();
+    const [updateStaff, {data: updateStaffData}] = profileStaffApi.useUpdateStaffMutation();
     const [getStaffs] = recordFormApi.endpoints.getBookStaff.useLazyQuery()
-    const [getStaff, {data: staffData, isLoading}] = profileApi.useLazyGetStaffQuery()
+    const [getStaff, {data: staffData, isLoading}] = profileStaffApi.useLazyGetStaffQuery()
     const history = useHistory();
     const params = useParams<{ id: string }>()
 

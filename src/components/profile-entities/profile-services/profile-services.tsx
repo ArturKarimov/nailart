@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./profile-staff.module.scss";
+import styles from "./profile-services.module.scss";
 import OrderHeader from "../../order-item/order-header/order-header";
 import avatar from "../../../images/avatar.svg";
 import {recordFormApi} from "../../../services/record-form/record-form";
@@ -11,12 +11,14 @@ import {nanoid} from "@reduxjs/toolkit";
 import {profileStaffApi} from "../../../services/profile/profile-staff/profile-staff";
 import ConfirmModal from "../../modal/confirm-modal/confirm-modal";
 import Loading from "../../loading/loading";
+import {profileServicesApi} from "../../../services/profile/profile-services/profile-services";
 
-const ProfileStaff = () => {
+const ProfileServices = () => {
     const [confirmAction, setConfirmAction] = React.useState<{isConfirm: boolean, data: number | null}>(
         {isConfirm: false, data: null}
     );
-    const {data, isLoading} = recordFormApi.useGetBookStaffQuery("")
+    // const {data, isLoading} = recordFormApi.useGetBookStaffQuery("")
+    const {data, isLoading} = profileServicesApi.useGetAllServicesQuery("");
     const [getStaffs] = recordFormApi.endpoints.getBookStaff.useLazyQuery()
     const [deleteStaff, { isSuccess }] = profileStaffApi.useDeleteStaffMutation();
     const location = useLocation() as ILocationState;
@@ -52,7 +54,7 @@ const ProfileStaff = () => {
                     <OrderHeader
                         color="rgb(255 255 255 / 80%)"
                         avatar={avatar}
-                        title="Добавить сотрудника"
+                        title="Добавить услугу"
                         width="100%"
                         actions={[<span className={styles.addIcon} key={nanoid()}>+</span>]}
                     />
@@ -65,9 +67,8 @@ const ProfileStaff = () => {
                                 id={item.id}
                                 color="#fffdfd80"
                                 avatar={luna}
-                                title={item.name}
-                                comment={item.specialization}
-                                information={item?.information}
+                                title={item.title}
+                                comment={item.comment}
                                 width="100%"
                                 actions={[
                                     <div
@@ -95,4 +96,4 @@ const ProfileStaff = () => {
     );
 };
 
-export default ProfileStaff;
+export default ProfileServices;

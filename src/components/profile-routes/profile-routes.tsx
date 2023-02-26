@@ -4,6 +4,7 @@ import {ILocationState} from "../../interfaces/interfaces";
 
 import ProfileStaff from "../profile-entities/profile-staff/profile-staff";
 import ProfileAddStaffModal from "../modal/profile-add-staff/profile-add-staff";
+import ProfileServices from "../profile-entities/profile-services/profile-services";
 
 const ProfileRoutes = () => {
     let location = useLocation() as ILocationState;
@@ -15,7 +16,9 @@ const ProfileRoutes = () => {
                 <Route path="/profile/staffs">
                     <ProfileStaff />
                 </Route>
-
+                <Route path="/profile/services">
+                    <ProfileServices />
+                </Route>
             </Switch>
             {background &&
                 <Switch>

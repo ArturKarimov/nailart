@@ -1,11 +1,11 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {BASE_URL} from "../../utils/constants";
-import {IMainResponse} from "../../interfaces/interfaces";
+import {BASE_URL} from "../../../utils/constants";
+import {IMainResponse} from "../../../interfaces/interfaces";
 import {IStaffRequest, IStaffResponse} from "./interface";
-import {Cookie} from "../../utils/cookie";
+import {Cookie} from "../../../utils/cookie";
 
-export const profileApi = createApi({
-    reducerPath: "profileApi",
+export const profileStaffApi = createApi({
+    reducerPath: "profileStaffApi",
     baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
     endpoints: (build) => ({
         addStaff: build.mutation<IMainResponse<IStaffResponse>, IStaffRequest>({

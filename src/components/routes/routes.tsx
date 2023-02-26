@@ -10,6 +10,7 @@ import { ProtectedRouteUser } from '../protected-route/protected-route-user';
 import Profile from '../../pages/profile/profile';
 import {ProtectedRouteGuest} from "../protected-route/protected-route-guest";
 import ProfileAddStaffModal from "../modal/profile-add-staff/profile-add-staff";
+import Register from "../../pages/register/register";
 
 const Routes = () => {
     let location = useLocation() as ILocationState;
@@ -27,11 +28,14 @@ const Routes = () => {
                 <Route path="/order">
                     <Order />
                 </Route>
-                <ProtectedRouteGuest path="/profile/staffs">
+                <ProtectedRouteGuest path="/profile">
                     <Profile/>
                 </ProtectedRouteGuest>
                 <ProtectedRouteUser exact path="/login">
                     <Login/>
+                </ProtectedRouteUser>
+                <ProtectedRouteUser exact path="/register">
+                    <Register />
                 </ProtectedRouteUser>
             </Switch>
             {background &&

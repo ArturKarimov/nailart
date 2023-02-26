@@ -6,7 +6,7 @@ import Routes from "./routes/routes";
 import {useAuth} from "../hooks/useAuth";
 
 function App() {
-  useAuth()
+  // useAuth()
 
   return (
     <Router>
